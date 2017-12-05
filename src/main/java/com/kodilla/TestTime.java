@@ -3,8 +3,7 @@ package com.kodilla;
 import java.util.*;
 import java.lang.*;
 
-class Book
-{
+class Book {
     private String author;
     private String title;
 
@@ -12,33 +11,37 @@ class Book
         this.author = author;
         this.title = title;
     }
+
     public String getAuthor() {
-        return  author;
+        return author;
     }
+
     public String getTitle() {
         return title;
     }
+
     @Override
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
         Book e = (Book) o;
         return this.author.equals(e.getAuthor()) && this.title.equals(e.getTitle());
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(author, title);
     }
+
     public String toString() {
         return this.author + " - " + this.title;
     }
 }
-class TestTime
-{
-    public static void main (String[] args) throws java.lang.Exception
-    {
+
+class TestTime {
+    public static void main(String[] args) throws java.lang.Exception {
         LinkedList<Book> books1 = new LinkedList<Book>();
 
-        for(int n = 0; n < 2000000; n++) {
-            books1.add(new Book("Ktos","Cos"));
+        for (int n = 0; n < 2000000; n++) {
+            books1.add(new Book("Ktos", "Cos"));
         }
         System.out.println("Wszystkich ksiazek jest: " + books1.size());
         System.out.println();
@@ -49,19 +52,19 @@ class TestTime
         System.out.println("Usuwanie pierwszego elementu trwa: " + (end - begin) + " ns ");
         System.out.println("Wszystkich ksiazek jest: " + books1.size());
         begin = System.nanoTime();
-        books1.remove(books1.size()-1);
+        books1.remove(books1.size() - 1);
         end = System.nanoTime();
         System.out.println("Usuwanie ostatniego elementu trwa: " + (end - begin) + " ns ");
         System.out.println("Wszystkich ksiazek jest: " + books1.size());
         System.out.println();
 
         begin = System.nanoTime();
-        books1.add(0, new Book("Ktos","Cos"));
+        books1.add(0, new Book("Ktos", "Cos"));
         end = System.nanoTime();
         System.out.println("Wstawianie pierwszego elementu trwa: " + (end - begin) + " ns ");
         System.out.println("Wszystkich ksiazek jest: " + books1.size());
         begin = System.nanoTime();
-        books1.add(books1.size(), new Book("Ktos","Cos"));
+        books1.add(books1.size(), new Book("Ktos", "Cos"));
         end = System.nanoTime();
         System.out.println("Wstawianie ostatniego elementu trwa: " + (end - begin) + " ns ");
         System.out.println("Wszystkich ksiazek jest: " + books1.size());
@@ -70,8 +73,8 @@ class TestTime
 
         HashMap<Book, Integer> books2 = new HashMap<Book, Integer>();
 
-        for(int n = 1; n < 1500000+1; n++) {
-            books2.put(new Book("Ktos" + n, "Cos" + n), n) ;
+        for (int n = 1; n < 1500000 + 1; n++) {
+            books2.put(new Book("Ktos" + n, "Cos" + n), n);
         }
         System.out.println("Ksiazek w HashMapie jest: " + books2.size());
         System.out.println();
@@ -98,8 +101,8 @@ class TestTime
 
         ArrayList<Book> books3 = new ArrayList<Book>();
 
-        for(int n = 0; n < 2000000; n++) {
-            books3.add(new Book("Ktos","Cos"));
+        for (int n = 0; n < 2000000; n++) {
+            books3.add(new Book("Ktos", "Cos"));
         }
         System.out.println("Wszystkich ksiazek w ArrayList jest: " + books3.size());
         System.out.println();
@@ -110,19 +113,19 @@ class TestTime
         System.out.println("Usuwanie pierwszego elementu trwa: " + (end - begin) + " ns ");
         System.out.println("Wszystkich ksiazek jest: " + books3.size());
         begin = System.nanoTime();
-        books3.remove(books3.size()-1);
+        books3.remove(books3.size() - 1);
         end = System.nanoTime();
         System.out.println("Usuwanie ostatniego elementu trwa: " + (end - begin) + " ns ");
         System.out.println("Wszystkich ksiazek jest: " + books3.size());
         System.out.println();
 
         begin = System.nanoTime();
-        books3.add(0, new Book("Ktos","Cos"));
+        books3.add(0, new Book("Ktos", "Cos"));
         end = System.nanoTime();
         System.out.println("Wstawianie pierwszego elementu trwa: " + (end - begin) + " ns ");
         System.out.println("Wszystkich ksiazek jest: " + books3.size());
         begin = System.nanoTime();
-        books3.add(books3.size(), new Book("Ktos","Cos"));
+        books3.add(books3.size(), new Book("Ktos", "Cos"));
         end = System.nanoTime();
         System.out.println("Wstawianie ostatniego elementu trwa: " + (end - begin) + " ns ");
         System.out.println("Wszystkich ksiazek jest: " + books3.size());
