@@ -1,4 +1,27 @@
 package com.kodilla.testing.collection;
 
-public class OddNumbersExterminator {
+import java.util.*;
+
+class OddNumbersExterminator {
+    public Integer lista() {
+
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        Random theGenerator = new Random();
+        for (int n = 0; n < 20; n++) {
+            numbers.add(theGenerator.nextInt((20 + 1)));
+        }
+//        System.out.println(numbers.size());
+//        System.out.println(numbers);
+        return lista();
+    }
+    public void exterminate(ArrayList<Integer> numbers) {
+        ArrayList<Integer> even = new ArrayList<Integer>(numbers);
+        for (int n=0; n < numbers.size(); n++){
+            if (numbers.get(n) % 2 == 1) {
+                even.remove(numbers.get(n));
+            }
+        }
+//        System.out.println(even.size());
+//        System.out.println(even);
+    }
 }
