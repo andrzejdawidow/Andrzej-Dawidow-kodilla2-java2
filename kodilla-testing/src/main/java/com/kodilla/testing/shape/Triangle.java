@@ -1,8 +1,8 @@
 package com.kodilla.testing.shape;
 
 public class Triangle implements Shape {
-    String name;
-    Integer field;
+    private String name;
+    private Integer field;
 
     public Triangle(String name, Integer field) {
         this.name = name;

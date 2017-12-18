@@ -14,12 +14,10 @@ public class ShapeCollector {
     }
 
     public Shape getFigure(int n) {
-
         return listOfFigures.get(n);
     }
 
     public int getFiguresListQuantity() {
-
         return listOfFigures.size();
     }
 

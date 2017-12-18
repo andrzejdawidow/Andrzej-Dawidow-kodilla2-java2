@@ -15,6 +15,7 @@ public class ShapeCollectorTestSuite {
     public void testRemoveFigure() {
         Shape square = new Square("square", 200);
         ShapeCollector obiekt = new ShapeCollector();
+        obiekt.addFigure(square);
         obiekt.removeFigure(square);
         Assert.assertEquals(0, obiekt.getFiguresListQuantity());
     }
