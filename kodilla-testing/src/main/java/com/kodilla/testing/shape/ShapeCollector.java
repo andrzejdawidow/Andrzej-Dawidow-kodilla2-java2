@@ -17,8 +17,7 @@ public class ShapeCollector {
         return listOfFigures.get(n);
     }
 
-    public int getFiguresListQuantity() {
-        return listOfFigures.size();
+    public int getFiguresListQuantity() { return listOfFigures.size();
     }
 
     public void showFigures() {
