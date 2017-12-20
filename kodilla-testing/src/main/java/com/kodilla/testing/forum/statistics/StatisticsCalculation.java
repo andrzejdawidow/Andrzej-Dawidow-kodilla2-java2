@@ -2,8 +2,8 @@ package com.kodilla.testing.forum.statistics;
 
 public class StatisticsCalculation {
    private int numberOfUser;
-   private int numberOfPosts;
-   private int numberOfComments;
+   private int numberOfPosts = 0;
+   private int numberOfComments = 0;
    private int averageNumberOfPostsPerUser;
    private  int averageNumberOfCommentsPerUser;
    private int averageNumberOfCommentsPerPost;
@@ -37,8 +37,6 @@ public class StatisticsCalculation {
         numberOfPosts = statistics.postsCount();
         numberOfComments = statistics.commentsCount();
         if (numberOfUser == 0) {
-            numberOfPosts = 0;
-            numberOfComments = 0;
             averageNumberOfPostsPerUser = 0;
             averageNumberOfCommentsPerUser = 0;
             averageNumberOfCommentsPerPost = 0;
