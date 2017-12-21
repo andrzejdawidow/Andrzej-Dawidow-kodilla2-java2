@@ -1,12 +1,12 @@
 package com.kodilla.testing.forum.statistics;
 
 public class StatisticsCalculation {
-   private int numberOfUser;
+   private int numberOfUser = 0;
    private int numberOfPosts = 0;
    private int numberOfComments = 0;
-   private int averageNumberOfPostsPerUser;
-   private  int averageNumberOfCommentsPerUser;
-   private int averageNumberOfCommentsPerPost;
+   private int averageNumberOfPostsPerUser = 0;
+   private  int averageNumberOfCommentsPerUser = 0;
+   private int averageNumberOfCommentsPerPost = 0;
 
     public int getNumberOfUser() {
         return numberOfUser;
