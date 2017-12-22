@@ -1,4 +1,4 @@
-/*package com.kodilla.testing.library;
+package com.kodilla.testing.library;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +19,10 @@ public class BookLibrary {
         bookList = resultList;
         return bookList;
     }
-    public List<Book>listBooksInHandsOf(LibraryUser libraryUser) {
-        List<Book>
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+        List<Book> bookBorrowedList = new ArrayList<>();
+        Book book = new Book("The book title", "The book author", 2000);
+        bookBorrowedList.add(book);
+        return bookBorrowedList;
     }
 }
-*/

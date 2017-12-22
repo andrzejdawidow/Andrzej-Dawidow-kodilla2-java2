@@ -37,14 +37,10 @@ public class StatisticsCalculation {
         numberOfPosts = statistics.postsCount();
         numberOfComments = statistics.commentsCount();
         if (numberOfUser == 0) {
-            averageNumberOfPostsPerUser = 0;
-            averageNumberOfCommentsPerUser = 0;
-            averageNumberOfCommentsPerPost = 0;
         } else {
             if (numberOfPosts == 0) {
                 averageNumberOfPostsPerUser = numberOfPosts / numberOfUser;
                 averageNumberOfCommentsPerUser = numberOfComments / numberOfUser;
-                averageNumberOfCommentsPerPost = 0;
             } else {
                 averageNumberOfPostsPerUser = numberOfPosts / numberOfUser;
                 averageNumberOfCommentsPerUser = numberOfComments / numberOfUser;
