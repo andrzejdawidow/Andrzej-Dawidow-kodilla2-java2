@@ -90,7 +90,7 @@ public class BookDirectoryTestSuite {
         //When
 
         //Then
-        assertEquals(15, theListOfBooks0.size());
+        assertEquals(0, theListOfBooks0.size());
     }
     //test 5
     @Test

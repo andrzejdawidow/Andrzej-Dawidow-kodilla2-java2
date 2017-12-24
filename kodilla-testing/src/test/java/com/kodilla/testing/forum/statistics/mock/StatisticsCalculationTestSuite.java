@@ -28,7 +28,7 @@ public class StatisticsCalculationTestSuite {
         Assert.assertEquals(0, calculations.getNumberOfPosts());
         Assert.assertEquals(2, calculations.getNumberOfComments());
         Assert.assertEquals(0, calculations.getAverageNumberOfPostsPerUser());
-        Assert.assertEquals(1, calculations.getAverageNumberOfCommentsPerUser());
+        Assert.assertEquals(0, calculations.getAverageNumberOfCommentsPerUser());
         Assert.assertEquals(0, calculations.getAverageNumberOfCommentsPerPost());
     }
     //test 2

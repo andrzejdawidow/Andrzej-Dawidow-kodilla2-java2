@@ -36,16 +36,11 @@ public class StatisticsCalculation {
         numberOfUser = statistics.usersNames().size();
         numberOfPosts = statistics.postsCount();
         numberOfComments = statistics.commentsCount();
-        if (numberOfUser != 0) {
-            if (numberOfPosts == 0) {
-                averageNumberOfPostsPerUser = numberOfPosts / numberOfUser;
-                averageNumberOfCommentsPerUser = numberOfComments / numberOfUser;
-            } else {
-                averageNumberOfPostsPerUser = numberOfPosts / numberOfUser;
-                averageNumberOfCommentsPerUser = numberOfComments / numberOfUser;
-                averageNumberOfCommentsPerPost = numberOfComments / numberOfPosts;
-            }
-         }
+        if (numberOfUser != 0 &&  numberOfPosts != 0) {
+            averageNumberOfPostsPerUser = numberOfPosts / numberOfUser;
+            averageNumberOfCommentsPerUser = numberOfComments / numberOfUser;
+            averageNumberOfCommentsPerPost = numberOfComments / numberOfPosts;
+        }
     }
 
     public void showStatistics() {
