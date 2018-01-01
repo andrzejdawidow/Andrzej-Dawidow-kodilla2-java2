@@ -1,12 +1,11 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.ExecuteSaySomething;
 import com.kodilla.stream.lambda.Processor;
 import com.kodilla.stream.lambda.ExpressionExecutor;
 import com.kodilla.stream.reference.FunctionalCalculator;
-
-import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
 
 public class StreamMain {
     public static void main(String[] args) {
@@ -25,10 +24,11 @@ public class StreamMain {
 
         PoemBeautifier poemBeautifier = new PoemBeautifier();
         String someTekst1 = poemBeautifier.beautify("number1", a -> "super1 + " + a + " + super2");
+
         System.out.println();
         System.out.println(someTekst1);
 
-        String someTekst2 = poemBeautifier.beautify("number2", a -> a + " " + toUpperCase(a));
+        String someTekst2 = poemBeautifier.beautify("number2", a -> a + " " + a.toUpperCase());
         System.out.println();
         System.out.println(someTekst2);
 
