@@ -19,7 +19,7 @@ public class HealthyShopSupplier2 implements Supplier {
     }
 
     @Override
-    public boolean process() {
+    public boolean process(String nameSupplier, String nameProduct, int quantity) {
 
         return true;
     }

@@ -12,7 +12,7 @@ public class F2D implements ProductOrderService {
     public boolean productOrder(String nameSupplier,  String nameProduct, int quantity) {
         for (Supplier sup : suppliers) {
             if (sup.(nameSupplier).equals(quantity))
-            return sup.process();
+            return sup.process(nameSupplier,nameProduct, quantity);
         }
         return true;
     }
