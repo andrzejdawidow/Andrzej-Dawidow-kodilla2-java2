@@ -13,16 +13,15 @@ public class ProductOrderProcessor {
         this.productOrderRepository = productOrderRepository;
     }
     public ProductOrderDto process(final ProductOrderRequest productOrderRequest) {
-        boolean isOrdered = productOrderService.productOrder(productOrderRequest.getUser(),
-                productOrderRequest.getProductName(), productOrderRequest.getQuantity());
+        boolean isOrdered = productOrderService.productOrder(productOrderRequest.getOrder());
 
         if(isOrdered) {
-            infoService.inform(productOrderRequest.getUser());
-            productOrderRepository.createOrder(productOrderRequest.getUser(), productOrderRequest.getProductName(),
-                    productOrderRequest.getQuantity());
-            return new ProductOrderDto(productOrderRequest.getUser(), true);
+            infoService.inform(productOrderRequest.getOrder());
+            productOrderRepository.createOrder(productOrderRequest.getOrder());
+
+            return new ProductOrderDto(productOrderRequest.getOrder(), true);
         } else {
-            return new ProductOrderDto(productOrderRequest.getUser(), false);
+            return new ProductOrderDto(productOrderRequest.getOrder(), false);
         }
     }
 

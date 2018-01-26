@@ -1,19 +1,21 @@
 package com.kodilla.good.patterns.food2door;
 
 public class GlutenFreeShopSupplier3 implements Supplier {
-    private String name;
+    private Order order;
 
-    public GlutenFreeShopSupplier3(String name) {
-        this.name = name;
+    public GlutenFreeShopSupplier3(Order order) {
+        this.order = order;
     }
 
-    public String getName() {
-        return name;
+    public Order getOrder() {
+        return order;
     }
 
     @Override
     public String toString() {
-        return name ;
+        return "GlutenFreeShopSupplier3{" +
+                "order= " + order +
+                '}';
     }
 
     @Override

@@ -9,9 +9,11 @@ public class F2D implements ProductOrderService {
         suppliers.add(cos);
     }
 
-    public boolean productOrder(String productName, int quantity){
-        for ()
+    public boolean productOrder(String nameSupplier,  String nameProduct, int quantity) {
+        for (Supplier sup : suppliers) {
+            if (sup.(nameSupplier).equals(quantity))
+            return sup.process();
+        }
         return true;
-
     }
 }

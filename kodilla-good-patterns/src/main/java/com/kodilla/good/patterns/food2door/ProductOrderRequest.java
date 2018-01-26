@@ -1,7 +1,19 @@
 package com.kodilla.good.patterns.food2door;
 
 public class ProductOrderRequest {
-    private String productName;
+    private Order order;
+
+    public ProductOrderRequest(Order order) {
+        this.order = order;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+}
+
+
+ /*   private String productName;
     private int quantity;
 
 
@@ -16,5 +28,4 @@ public class ProductOrderRequest {
 
     public int getQuantity() {
         return quantity;
-    }
-}
+    } */
