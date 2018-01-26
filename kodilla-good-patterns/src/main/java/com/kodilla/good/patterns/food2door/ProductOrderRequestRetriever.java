@@ -2,8 +2,10 @@ package com.kodilla.good.patterns.food2door;
 
 public class ProductOrderRequestRetriever {
     public ProductOrderRequest retrieve() {
+//        String name = "dostawca1";
+        String productName = "potatoes";
         int quantity = 90;
-        String kind = "potatoes";
-        return new ProductOrderRequest(quantity, kind);
+
+        return new ProductOrderRequest(productName, quantity);
     }
 }

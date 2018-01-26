@@ -12,13 +12,18 @@ public class ProductOrderProcessor {
         this.productOrderService = productOrderService;
         this.productOrderRepository = productOrderRepository;
     }
-    //    final Supplier supplier;
+    public ProductOrderDto process(final ProductOrderRequest productOrderRequest) {
+        boolean isOrdered = productOrderService.productOrder(productOrderRequest.getUser(),
+                productOrderRequest.getProductName(), productOrderRequest.getQuantity());
 
-//    public ProductOrderProcessor(Supplier supplier) {
-//        this.supplier = supplier;
-//    }
-
-    public void process() {
-
+        if(isOrdered) {
+            infoService.inform(productOrderRequest.getUser());
+            productOrderRepository.createOrder(productOrderRequest.getUser(), productOrderRequest.getProductName(),
+                    productOrderRequest.getQuantity());
+            return new ProductOrderDto(productOrderRequest.getUser(), true);
+        } else {
+            return new ProductOrderDto(productOrderRequest.getUser(), false);
+        }
     }
+
 }
