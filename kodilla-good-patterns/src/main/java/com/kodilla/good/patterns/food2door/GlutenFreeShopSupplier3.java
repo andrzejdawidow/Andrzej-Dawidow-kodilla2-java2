@@ -20,7 +20,7 @@ public class GlutenFreeShopSupplier3 implements Supplier {
 
     @Override
     public boolean process(String nameSupplier, String nameProduct, int quantity) {
-
+        System.out.println("This is a supplier 3 ");
      return true;
     }
 }

@@ -20,7 +20,7 @@ public class ExtraFoodShopSupplier1 implements Supplier {
 
     @Override
     public boolean process(String nameSupplier, String nameProduct, int quantity) {
-
+        System.out.println("This is a supplier 1 ");
         return true;
     }
 }
