@@ -23,5 +23,9 @@ public class CalculatorTestSuite {
         calculator.mul(4, 2);
         calculator.div(4, 2);
         //Then
+        Assert.assertEquals(6.0, 4+2, 0.1);
+        Assert.assertEquals(2.0, 4-2, 0.1);
+        Assert.assertEquals(8.0, 4*2, 0.1);
+        Assert.assertEquals(2.0, 4/2, 0.1);
     }
 }
