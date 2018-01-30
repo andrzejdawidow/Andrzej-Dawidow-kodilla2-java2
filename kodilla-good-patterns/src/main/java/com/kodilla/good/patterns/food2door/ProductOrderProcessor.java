@@ -13,7 +13,8 @@ public class ProductOrderProcessor {
         this.productOrderRepository = productOrderRepository;
     }
     public ProductOrderDto process(final ProductOrderRequest productOrderRequest) {
-        boolean isOrdered = productOrderService.productOrder(productOrderRequest.getOrder());
+        boolean isOrdered = productOrderService.productOrder(productOrderRequest.getOrder().getNameSupplier(),
+                productOrderRequest.getOrder().getNameProduct(), productOrderRequest.getOrder().getQuantity());
 
         if(isOrdered) {
             infoService.inform(productOrderRequest.getOrder());
@@ -24,5 +25,4 @@ public class ProductOrderProcessor {
             return new ProductOrderDto(productOrderRequest.getOrder(), false);
         }
     }
-
 }

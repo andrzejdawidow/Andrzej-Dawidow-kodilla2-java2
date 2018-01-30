@@ -1,26 +1,20 @@
 package com.kodilla.good.patterns.food2door;
 
 public class HealthyShopSupplier2 implements Supplier {
-    private Order order;
+    private String name;
 
-    public HealthyShopSupplier2(Order order) {
-        this.order = order;
-    }
-
-    public Order getOrder() {
-        return order;
+    public HealthyShopSupplier2(String name) {
+        this.name = name;
     }
 
     @Override
-    public String toString() {
-        return "HealthyShopSupplier2{" +
-                "order= " + order +
-                '}';
-    }
-
-    @Override
-    public boolean process(String nameSupplier, String nameProduct, int quantity) {
+    public boolean process(String nameProduct, int quantity) {
         System.out.println("This is a supplier 2 ");
         return true;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }
