@@ -5,8 +5,4 @@ public class AllegroProductOrderRepository implements ProductOrderRepository {
         System.out.println("Order to " + user + " quantity: " + quantity + " Transaction OK" );
     }
 
-    @Override
-    public void createOrder(User user) {
-
-    }
 }

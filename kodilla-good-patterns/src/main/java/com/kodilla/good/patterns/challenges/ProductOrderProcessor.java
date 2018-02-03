@@ -18,7 +18,7 @@ public class ProductOrderProcessor {
 
         if(isOrdered) {
             informationService.inform(productOrderRequest.getUser());
-            productOrderRepository.createOrder(productOrderRequest.getUser());
+            productOrderRepository.createOrder(productOrderRequest.getUser(), productOrderRequest.getQuantity());
             return new ProductOrderDto(productOrderRequest.getUser(), true);
         } else {
             return new ProductOrderDto(productOrderRequest.getUser(), false);

@@ -1,7 +1,5 @@
 package com.kodilla.good.patterns.challenges;
 
-//import com.kodilla.good.patterns.food2door.Order;
-
 public interface ProductOrderRepository {
-    void createOrder(User user);
+    void createOrder(User user, int quantity);
 }
