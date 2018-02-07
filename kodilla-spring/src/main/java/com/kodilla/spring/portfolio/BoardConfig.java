@@ -7,19 +7,28 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class BoardConfig {
 
-    @Bean
-    public TaskList getTaskList() { return new TaskList(); }
-
-    @Bean(name = "task1")
+    @Bean(name = "tasks1")
     @Scope("prototype")
-    public TaskList getTaskListOne() {return new TaskList(); }
+    public TaskList getTaskListOne() {
+    TaskList t1 = new TaskList();
+    t1.addTask("washing");
+    return t1;}
 
-    @Bean(name = "task2")
+    @Bean(name = "tasks2")
     @Scope("prototype")
-    public TaskList getTaskListTwo() {return new TaskList(); }
+    public TaskList getTaskListTwo() {
+        TaskList t2 = new TaskList();
+        t2.addTask("cleaning");
+        t2.addTask("vacuuming");
+        return t2;}
 
-    @Bean(name = "task3")
+    @Bean(name = "tasks3")
     @Scope("prototype")
-    public TaskList getTaskListThree() {return new TaskList(); }
+    public TaskList getTaskListThree() {
+        TaskList t3 = new TaskList();
+        t3.addTask("ironing");
+        t3.addTask("shopping");
+        t3.addTask("mowing the grass");
+        return t3;}
 
 }

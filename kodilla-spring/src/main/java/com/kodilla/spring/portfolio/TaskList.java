@@ -14,7 +14,9 @@ public final class TaskList {
         return tasks;
     }
 
-
+    public void addTask(String task) {
+        tasks.add(task);
+    }
 
 }
 

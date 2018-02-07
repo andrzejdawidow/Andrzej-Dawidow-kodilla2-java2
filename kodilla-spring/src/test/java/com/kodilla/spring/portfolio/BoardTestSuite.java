@@ -8,10 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class BoardTestSuite {
@@ -19,20 +15,15 @@ public class BoardTestSuite {
     public void testTaskAdd() {
         //Given
         ApplicationContext context =
-                new AnnotationConfigApplicationContext(BoardConfig.class);
-//        Board board = context.getBean(Board.class);
-
-
+                new AnnotationConfigApplicationContext("com.kodilla.spring");
+        Board board = context.getBean(Board.class);
         //When
-
-//        board.getToDoList();
-  //      board.getInProgressList();
-    //    board.getDoneList();
+        TaskList toDoList = board.getToDoList();
+        TaskList inProgressList = board.getInProgressList();
+        TaskList doneList = board.getDoneList();
         //Then
- //       board.read();
-        System.out.println("===== Beans list: ==== >>");
-        Arrays.stream(context.getBeanDefinitionNames())
-                .forEach(System.out::println);
-        System.out.println("<< ===== Beans list ====");
+        Assert.assertEquals(1, toDoList.getTasks().size());
+        Assert.assertEquals(2, inProgressList.getTasks().size());
+        Assert.assertEquals(3, doneList.getTasks().size());
     }
 }
