@@ -16,13 +16,43 @@ public class LibraryTestSuite {
         Book book3 = new Book("title 3", "Maniek",
                 LocalDate.of(2003, 03, 03));
 
-        HashSet<Book> setLibrary = new HashSet<>();
-        setLibrary.add(book1);
-        setLibrary.add(book2);
-        setLibrary.add(book3);
-        System.out.println(setLibrary);
+        Library library = new Library("z1");
+        library.getBooks().add(book1);
+        library.getBooks().add(book2);
+        library.getBooks().add(book3);
+        HashSet<Book> books = new HashSet<>();
+        books.add(book1);
+        books.add(book2);
+        books.add(book3);
+
+        Library clonedLibrary = null;
+        try {
+            clonedLibrary = library.shallowCopy();
+            clonedLibrary.setName("z2");
+        } catch (CloneNotSupportedException e) {
+            System.out.println(e);
+        }
+
+        Library deepClonedLibrary = null;
+        try {
+            deepClonedLibrary = library.deepCopy();
+            deepClonedLibrary.setName("z3");
+        } catch (CloneNotSupportedException e) {
+            System.out.println(e);
+        }
         //When
+        library.books.remove(book1);
         //Then
-        Assert.assertEquals(3, setLibrary.size());
+        System.out.println(library);
+        System.out.println(clonedLibrary);
+        System.out.println(deepClonedLibrary);
+        System.out.println(books);
+        Assert.assertEquals("z1", library.getName());
+        Assert.assertEquals("z2", clonedLibrary.getName());
+        Assert.assertEquals("z3", deepClonedLibrary.getName());
+        Assert.assertEquals(2, library.getBooks().size());
+        Assert.assertEquals(2, clonedLibrary.getBooks().size());
+        Assert.assertEquals(3, deepClonedLibrary.getBooks().size());
+        Assert.assertNotEquals(deepClonedLibrary.getBooks(), library.getBooks());
     }
 }
