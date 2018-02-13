@@ -16,6 +16,7 @@ public final class TaskFactory {
             case DRIVINGTASK:
                 return new DrivingTask("driving",
                         "uncle John", "car");
+
             default:
                 return null;
         }
