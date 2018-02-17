@@ -18,15 +18,14 @@ public class TaskListDaoTestSuite {
     @Test
     public void testFindByListName() {
         //Given
-        TaskList taskList = new TaskList();
+        TaskList taskList = new TaskList("ToDo", "washing car");
         taskListDao.save(taskList);
-        String listName = taskList.getListName();
+        int id = taskList.getId();
         //When
-        List<TaskList> readTaskList = taskListDao.findByListName(listName);
+        List<TaskList> readTaskList = taskListDao.findByListName("ToDo");
         //Then
         Assert.assertEquals(1, readTaskList.size());
         //CleanUp
-        int id = readTaskList.get(0).getId();
         taskListDao.delete(id);
     }
 }
