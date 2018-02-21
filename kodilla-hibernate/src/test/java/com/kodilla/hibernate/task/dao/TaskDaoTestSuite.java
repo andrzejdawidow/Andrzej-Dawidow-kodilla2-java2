@@ -40,7 +40,7 @@ public class TaskDaoTestSuite {
         //When
         List<Task> readTasks = taskDao.findByDuration(duration);
         //Then
-        Assert.assertEquals(12, readTasks.size());
+        Assert.assertEquals(1, readTasks.size());
         //CleanUp
         int id = readTasks.get(0).getId();
         taskDao.delete(id);
@@ -59,6 +59,6 @@ public class TaskDaoTestSuite {
         Assert.assertNotEquals(0, id);
 
         //CleanUp
-        //taskDao.delete(id);
+        taskDao.delete(id);
     }
 }
