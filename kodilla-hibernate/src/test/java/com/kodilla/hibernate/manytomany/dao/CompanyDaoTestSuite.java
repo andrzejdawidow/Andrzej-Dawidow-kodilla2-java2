@@ -97,7 +97,6 @@ public class CompanyDaoTestSuite {
         List<Employee> listOfRetrieveEmployee = new ArrayList<>(employeeDao.retrieveEmployeeWithLastnameSame("Smith"));
         List<Company> listOfRetrieveCompanies = new ArrayList<>(companyDao.retrieveCompanyWithFreeCharSame("Sof"));
 
-
         //Then
         Assert.assertEquals(1, listOfRetrieveCompanies.size());
         Assert.assertEquals(1, listOfRetrieveEmployee.size());
